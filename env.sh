@@ -17,7 +17,7 @@ test -f "$HOME/Library/Preferences/com.runningwithcrayons.Alfred.plist" || {
 
 # Expected by ExampleNew
 export alfred_workflow_version="0.1.0"
-export alfred_workflow_name="Open Chinese Convert 開放中文轉換"
+export alfred_workflow_name="Open Chinese Convert"
 export alfred_workflow_package="github.com/cage1016/alfred-opencc"
 # export alfred_workflow_category="Tools" // Internet/Tools/Productivity or empty
 export alfred_workflow_description="Convert Chinese between Traditional and Simplified by OpenCC"
