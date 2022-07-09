@@ -14,6 +14,11 @@
                 "kind": "build",
                 "isDefault": true
             },
+            "options": {
+                "env": {
+                    "PATH": "/Users/kaichuchung/.gvm/gos/go1.17/bin/go:${env:PATH}"
+                }
+            },
             "problemMatcher": [],
         },
         {
