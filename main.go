@@ -2,19 +2,30 @@ package main
 
 import (
 	"errors"
+	"log"
+	"os"
+	"os/exec"
 
 	aw "github.com/deanishe/awgo"
+	"github.com/deanishe/awgo/update"
 
 	"github.com/cage1016/alfred-opencc/alfred"
 	"github.com/cage1016/alfred-opencc/handler"
 	"github.com/cage1016/alfred-opencc/occ"
 )
 
-var wf *aw.Workflow
+const updateJobName = "checkForUpdate"
+
+var (
+	repo = "cage1016/alfred-opencc"
+	wf   *aw.Workflow
+)
+
 var cfg occ.Config
 
 func init() {
-	wf = aw.New()
+	wf = aw.New(update.GitHub(repo), aw.HelpURL(repo+"/issues"))
+
 	cfg.S2t_Enabled = alfred.GetENABLED_S2T(wf)
 	cfg.T2s_Enabled = alfred.GetENABLED_T2S(wf)
 	cfg.S2tw_Enabled = alfred.GetENABLED_S2TW(wf)
@@ -33,6 +44,33 @@ func run() {
 
 	handlers := map[string]func(*aw.Workflow, map[occ.Item]occ.ConverMap, []string) error{
 		"occ": handler.OpenChineseConvertHandler,
+		"update": func(wf *aw.Workflow, _ map[occ.Item]occ.ConverMap, _ []string) error {
+			wf.Configure(aw.TextErrors(true))
+			log.Println("Checking for updates...")
+			if err := wf.CheckForUpdate(); err != nil {
+				wf.FatalError(err)
+			}
+			return nil
+		},
+	}
+
+	if wf.UpdateCheckDue() && !wf.IsRunning(updateJobName) {
+		log.Println("Running update check in background...")
+
+		cmd := exec.Command(os.Args[0], "update")
+		if err := wf.RunInBackground(updateJobName, cmd); err != nil {
+			log.Printf("Error starting update check: %s", err)
+		}
+	}
+
+	if wf.UpdateAvailable() {
+		wf.Configure(aw.SuppressUIDs(true))
+		log.Println("Update available!")
+		wf.NewItem("An update is available!").
+			Subtitle("⇥ or ↩ to install update").
+			Valid(false).
+			Autocomplete("workflow:update").
+			Icon(&aw.Icon{Value: "update-available.png"})
 	}
 
 	h, found := handlers[args[0]]
