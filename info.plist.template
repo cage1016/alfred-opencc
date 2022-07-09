@@ -163,7 +163,22 @@
 		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string>Open Chinese Convert 開放中文轉換
+
+## Usage
+
+ENABLED_S2T - 簡體到繁體
+ENABLED_T2S - 繁體到簡體
+ENABLED_S2TW - 簡體到臺灣正體
+ENABLED_TW2S - 臺灣正體到簡體
+ENABLED_S2HK - 簡體到香港繁體
+ENABLED_HK2S - 香港繁體到簡體
+ENABLED_S2TWP - 簡體到繁體（臺灣正體標準）並轉換爲臺灣常用詞彙
+ENABLED_TW2SP - 繁體（臺灣正體標準）到簡體並轉換爲中國大陸常用詞彙
+
+
+for more information, please go to:
+https://github.com/cage1016/alfred-opencc</string>
 	<key>uidata</key>
 	<dict>
 		<key>1197F80A-BFB9-4E2A-B8EE-438451DC2C1B</key>
