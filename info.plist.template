@@ -80,7 +80,7 @@
 				<key>keyword</key>
 				<string>occ</string>
 				<key>subtext</key>
-				<string></string>
+				<string>簡體到繁體、繁體到簡體、簡體到臺灣正體、臺灣正體到簡體、簡體到香港繁體、香港繁體到簡體、簡體到繁體（臺灣正體標準）並轉換爲臺灣常用詞彙、繁體（臺灣正體標準）到簡體並轉換爲中國大陸常用詞彙</string>
 				<key>text</key>
 				<string>簡繁轉換 👉️ '{query}'</string>
 				<key>withspace</key>
@@ -125,7 +125,7 @@
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string></string>
+				<string>簡體到繁體、繁體到簡體、簡體到臺灣正體、臺灣正體到簡體、簡體到香港繁體、香港繁體到簡體、簡體到繁體（臺灣正體標準）並轉換爲臺灣常用詞彙、繁體（臺灣正體標準）到簡體並轉換爲中國大陸常用詞彙</string>
 				<key>title</key>
 				<string>簡繁轉換 👉️ '{query}'</string>
 				<key>type</key>
