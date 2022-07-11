@@ -45,5 +45,9 @@
 ## Contribute
 If you find any bug or want to propose a new feature, please open an issue to discuss it.
 
+## Third Party Library
+
+- [longbridgeapp/opencc](https://github.com/longbridgeapp/opencc) Apache License
+
 ## License
 This repository contains free software released under the MIT Licence. Please check out the [LICENSE](./LICENSE) file for details.
