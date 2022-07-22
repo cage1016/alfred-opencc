@@ -3,7 +3,7 @@ package occ
 import (
 	"log"
 
-	"github.com/longbridgeapp/opencc"
+	"github.com/cage1016/opencc"
 )
 
 const (
