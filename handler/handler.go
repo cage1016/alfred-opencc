@@ -14,6 +14,7 @@ import (
 func OpenChineseConvertHandler(wf *aw.Workflow, lc map[occ.Item]occ.ConverMap, args []string) error {
 	os := make([]occ.Item, 0, len(lc))
 
+	wf.Configure(aw.SuppressUIDs(true))
 	for item := range lc {
 		os = append(os, item)
 	}

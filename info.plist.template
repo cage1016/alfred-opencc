@@ -163,22 +163,25 @@
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>Open Chinese Convert 開放中文轉換
+	<string># Open Chinese Convert 開放中文轉換
 
-## Usage
+Requires 
 
-ENABLED_S2T - 簡體到繁體
-ENABLED_T2S - 繁體到簡體
-ENABLED_S2TW - 簡體到臺灣正體
-ENABLED_TW2S - 臺灣正體到簡體
-ENABLED_S2HK - 簡體到香港繁體
-ENABLED_HK2S - 香港繁體到簡體
-ENABLED_S2TWP - 簡體到繁體（臺灣正體標準）並轉換爲臺灣常用詞彙
-ENABLED_TW2SP - 繁體（臺灣正體標準）到簡體並轉換爲中國大陸常用詞彙
+- Preferably Alfred 5
 
+## Support
 
-for more information, please go to:
-https://github.com/cage1016/alfred-opencc</string>
+- 簡體到繁體
+- 繁體到簡體
+- 簡體到臺灣正體
+- 臺灣正體到簡體
+- 簡體到香港繁體
+- 香港繁體到簡體
+- 簡體到繁體（臺灣正體標準）並轉換爲臺灣常用詞彙
+- 繁體（臺灣正體標準）到簡體並轉換爲中國大陸常用詞彙
+
+## Issues
+for more information, please visit https://github.com/cage1016/alfred-opencc</string>
 	<key>uidata</key>
 	<dict>
 		<key>1197F80A-BFB9-4E2A-B8EE-438451DC2C1B</key>
@@ -210,25 +213,161 @@ https://github.com/cage1016/alfred-opencc</string>
 			<real>150</real>
 		</dict>
 	</dict>
-	<key>variables</key>
-	<dict>
-		<key>ENABLED_HK2S</key>
-		<string>1</string>
-		<key>ENABLED_S2HK</key>
-		<string>1</string>
-		<key>ENABLED_S2T</key>
-		<string>1</string>
-		<key>ENABLED_S2TW</key>
-		<string>1</string>
-		<key>ENABLED_S2TWP</key>
-		<string>1</string>
-		<key>ENABLED_T2S</key>
-		<string>1</string>
-		<key>ENABLED_TW2S</key>
-		<string>1</string>
-		<key>ENABLED_TW2SP</key>
-		<string>1</string>
-	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<true/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>簡體到繁體</string>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Enable</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>ENABLED_S2T</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<true/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>繁體到簡體</string>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string></string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>ENABLED_T2S</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<true/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>簡體到臺灣正體</string>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string></string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>ENABLED_S2TW</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<true/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>臺灣正體到簡體</string>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string></string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>ENABLED_TW2S</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<true/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>簡體到香港繁體</string>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string></string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>ENABLED_S2HK</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<true/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>香港繁體到簡體</string>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string></string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>ENABLED_HK2S</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<true/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>簡體到繁體（臺灣正體標準）並轉換爲臺灣常用詞彙</string>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string></string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>ENABLED_S2TWP</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<true/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>繁體（臺灣正體標準）到簡體並轉換爲中國大陸常用詞彙</string>
+			</dict>
+			<key>description</key>
+			<string>啟用需要的簡繁翻譯模式</string>
+			<key>label</key>
+			<string></string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>ENABLED_TW2SP</string>
+		</dict>
+	</array>
 	<key>version</key>
 	<string>${alfred_workflow_version}</string>
 	<key>webaddress</key>
