@@ -2,7 +2,7 @@
 
 [![Release](https://github.com/cage1016/alfred-opencc/actions/workflows/release.yml/badge.svg)](https://github.com/cage1016/alfred-opencc/actions/workflows/release.yml)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
-
+![GitHub all releases](https://img.shields.io/github/downloads/cage1016/alfred-opencc/total)
 ## Introduction
 
 由於 MacOS 在 12.3 終於移除對 Python2 的支援，導至 Alfred 4 版本中原先使用的 [amowu/alfred-chinese-converter](https://github.com/amowu/alfred-chinese-converter) 已經無法再使，作者也沒有更新。所以透過 Golang 自己造一個也省去了對 Python 的依賴。
