@@ -8,6 +8,7 @@ import (
 
 	aw "github.com/deanishe/awgo"
 	"github.com/deanishe/awgo/update"
+	_ "github.com/joho/godotenv/autoload"
 
 	"github.com/cage1016/alfred-opencc/alfred"
 	"github.com/cage1016/alfred-opencc/handler"

@@ -5,6 +5,7 @@ go 1.17
 require (
 	github.com/cage1016/opencc v0.1.11
 	github.com/deanishe/awgo v0.29.1
+	github.com/joho/godotenv v1.4.0
 )
 
 require (
