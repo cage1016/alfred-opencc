@@ -43,9 +43,9 @@ func run() {
 		wf.FatalError(errors.New("please provide some input 👀"))
 	}
 
-	handlers := map[string]func(*aw.Workflow, map[occ.Item]occ.ConverMap, []string) error{
+	handlers := map[string]func(*aw.Workflow, map[occ.Item]occ.ConvertMap, []string) error{
 		"occ": handler.OpenChineseConvertHandler,
-		"update": func(wf *aw.Workflow, _ map[occ.Item]occ.ConverMap, _ []string) error {
+		"update": func(wf *aw.Workflow, _ map[occ.Item]occ.ConvertMap, _ []string) error {
 			wf.Configure(aw.TextErrors(true))
 			log.Println("Checking for updates...")
 			if err := wf.CheckForUpdate(); err != nil {

@@ -42,7 +42,7 @@ type Converter interface {
 	Convert(string) (string, error)
 }
 
-type ConverMap struct {
+type ConvertMap struct {
 	Cc       *opencc.OpenCC
 	Subtitle string
 	Icon     string
@@ -59,7 +59,7 @@ type Config struct {
 	Tw2sp_Enabled bool
 }
 
-func New(cfg Config) map[Item]ConverMap {
+func New(cfg Config) map[Item]ConvertMap {
 	var fn = func(l Language) *opencc.OpenCC {
 		o, err := opencc.New(string(l))
 		if err != nil {
@@ -69,38 +69,38 @@ func New(cfg Config) map[Item]ConverMap {
 		return o
 	}
 
-	m := make(map[Item]ConverMap)
+	m := make(map[Item]ConvertMap)
 
 	if cfg.S2t_Enabled {
-		m[Item{S2t, 0}] = ConverMap{fn(S2t), "簡體到繁體", "TraditionalChinese.png"}
+		m[Item{S2t, 0}] = ConvertMap{fn(S2t), "簡體到繁體", "TraditionalChinese.png"}
 	}
 
 	if cfg.T2s_Enabled {
-		m[Item{T2s, 1}] = ConverMap{fn(T2s), "繁體到簡體", "SimplifiedChinese.png"}
+		m[Item{T2s, 1}] = ConvertMap{fn(T2s), "繁體到簡體", "SimplifiedChinese.png"}
 	}
 
 	if cfg.S2tw_Enabled {
-		m[Item{S2tw, 2}] = ConverMap{fn(S2tw), "簡體到臺灣正體", "TW_taiwan.png"}
+		m[Item{S2tw, 2}] = ConvertMap{fn(S2tw), "簡體到臺灣正體", "TW_taiwan.png"}
 	}
 
 	if cfg.Tw2s_Enabled {
-		m[Item{Tw2s, 3}] = ConverMap{fn(Tw2s), "臺灣正體到簡體", "SimplifiedChinese.png"}
+		m[Item{Tw2s, 3}] = ConvertMap{fn(Tw2s), "臺灣正體到簡體", "SimplifiedChinese.png"}
 	}
 
 	if cfg.S2hk_Enabled {
-		m[Item{S2hk, 4}] = ConverMap{fn(S2hk), "簡體到香港繁體", "HK_hongkong.png"}
+		m[Item{S2hk, 4}] = ConvertMap{fn(S2hk), "簡體到香港繁體", "HK_hongkong.png"}
 	}
 
 	if cfg.Hk2s_Enabled {
-		m[Item{Hk2s, 5}] = ConverMap{fn(Hk2s), "香港繁體到簡體", "SimplifiedChinese.png"}
+		m[Item{Hk2s, 5}] = ConvertMap{fn(Hk2s), "香港繁體到簡體", "SimplifiedChinese.png"}
 	}
 
 	if cfg.S2twp_Enabled {
-		m[Item{S2twp, 6}] = ConverMap{fn(S2twp), "簡體到繁體（臺灣正體標準）並轉換爲臺灣常用詞彙", "TW_taiwan.png"}
+		m[Item{S2twp, 6}] = ConvertMap{fn(S2twp), "簡體到繁體（臺灣正體標準）並轉換爲臺灣常用詞彙", "TW_taiwan.png"}
 	}
 
 	if cfg.Tw2sp_Enabled {
-		m[Item{Tw2sp, 7}] = ConverMap{fn(Tw2sp), "繁體（臺灣正體標準）到簡體並轉換爲中國大陸常用詞彙", "CN_china.png"}
+		m[Item{Tw2sp, 7}] = ConvertMap{fn(Tw2sp), "繁體（臺灣正體標準）到簡體並轉換爲中國大陸常用詞彙", "CN_china.png"}
 	}
 
 	return m

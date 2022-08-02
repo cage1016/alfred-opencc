@@ -11,7 +11,7 @@ import (
 	"github.com/cage1016/alfred-opencc/occ"
 )
 
-func OpenChineseConvertHandler(wf *aw.Workflow, lc map[occ.Item]occ.ConverMap, args []string) error {
+func OpenChineseConvertHandler(wf *aw.Workflow, lc map[occ.Item]occ.ConvertMap, args []string) error {
 	os := make([]occ.Item, 0, len(lc))
 
 	for item := range lc {

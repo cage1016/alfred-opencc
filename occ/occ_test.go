@@ -13,7 +13,7 @@ type result struct {
 
 func TestNew(t *testing.T) {
 	type fields struct {
-		occ occ.ConverMap
+		occ occ.ConvertMap
 	}
 
 	type args struct {
