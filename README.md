@@ -2,6 +2,7 @@
 
 [![Release](https://github.com/cage1016/alfred-opencc/actions/workflows/release.yml/badge.svg)](https://github.com/cage1016/alfred-opencc/actions/workflows/release.yml)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
+![GitHub all releases](https://img.shields.io/github/downloads/cage1016/alfred-opencc/total)
 
 ## Introduction
 
