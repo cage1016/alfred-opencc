@@ -1,10 +1,10 @@
 package handler
 
 import (
+	"fmt"
 	"log"
 	"sort"
 	"strconv"
-	"strings"
 
 	aw "github.com/deanishe/awgo"
 
@@ -13,25 +13,28 @@ import (
 
 func OpenChineseConvertHandler(wf *aw.Workflow, lc map[occ.Item]occ.ConvertMap, args []string) error {
 	os := make([]occ.Item, 0, len(lc))
+	buf := map[int]string{}
 
 	for item := range lc {
 		os = append(os, item)
 	}
 
 	sort.Sort(occ.Items(os))
-	for _, k := range os {
-		cm := lc[k]
-		out, err := cm.Cc.Convert(strings.Join(args, " "))
+	for _, v := range os {
+		cm := lc[v]
+		out, err := cm.Cc.Convert(args[0])
 		if err != nil {
 			log.Printf("%s", err)
 			continue
 		}
+		buf[v.Order] = out
 
-		wf.NewItem(out).
-			Subtitle(cm.Subtitle).
+		wf.NewItem(buf[v.Order]).
+			Subtitle(fmt.Sprintf("⌘+L, ↩ Copy %s", cm.Subtitle)).
 			Icon(&aw.Icon{Value: cm.Icon}).
-			Arg(out).
-			UID(strconv.Itoa(k.Order)).
+			Arg(buf[v.Order]).
+			Largetype(buf[v.Order]).
+			UID(strconv.Itoa(v.Order)).
 			Valid(true)
 	}
 
