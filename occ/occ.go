@@ -1,8 +1,6 @@
 package occ
 
 import (
-	"log"
-
 	"github.com/cage1016/opencc"
 )
 
@@ -45,16 +43,11 @@ type Config struct {
 
 func New(cfg Config) map[string]ConvertMap {
 	var fn = func(l Language) *opencc.OpenCC {
-		o, err := opencc.New(string(l))
-		if err != nil {
-			log.Printf("%s", err)
-			return nil
-		}
+		o, _ := opencc.New(string(l))
 		return o
 	}
 
 	m := make(map[string]ConvertMap)
-
 	m["簡體到繁體"] = ConvertMap{fn(S2t), "簡體到繁體", "TraditionalChinese.png", S2t, cfg.S2t_Enabled, 0}
 	m["繁體到簡體"] = ConvertMap{fn(T2s), "繁體到簡體", "SimplifiedChinese.png", T2s, cfg.T2s_Enabled, 1}
 	m["簡體到臺灣正體"] = ConvertMap{fn(S2tw), "簡體到臺灣正體", "TW_taiwan.png", S2tw, cfg.S2tw_Enabled, 2}
