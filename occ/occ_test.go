@@ -28,8 +28,7 @@ func TestNew(t *testing.T) {
 		{
 			name: "s2t",
 			prepare: func(f *fields) {
-				oc := occ.New(occ.Config{S2t_Enabled: true})
-				f.occ = oc[occ.Item{occ.S2t, 0}]
+				f.occ = occ.New(occ.Config{true, true, true, true, true, true, true, true})["簡體到繁體"]
 			},
 			args: args{
 				input: map[string]string{
@@ -41,8 +40,7 @@ func TestNew(t *testing.T) {
 		{
 			name: "t2s",
 			prepare: func(f *fields) {
-				oc := occ.New(occ.Config{T2s_Enabled: true})
-				f.occ = oc[occ.Item{occ.T2s, 1}]
+				f.occ = occ.New(occ.Config{true, true, true, true, true, true, true, true})["繁體到簡體"]
 			},
 			args: args{
 				input: map[string]string{
@@ -53,8 +51,7 @@ func TestNew(t *testing.T) {
 		{
 			name: "s2tw",
 			prepare: func(f *fields) {
-				oc := occ.New(occ.Config{S2tw_Enabled: true})
-				f.occ = oc[occ.Item{occ.S2tw, 2}]
+				f.occ = occ.New(occ.Config{true, true, true, true, true, true, true, true})["簡體到臺灣正體"]
 			},
 			args: args{
 				input: map[string]string{
@@ -66,8 +63,7 @@ func TestNew(t *testing.T) {
 		{
 			name: "tw2s",
 			prepare: func(f *fields) {
-				oc := occ.New(occ.Config{Tw2s_Enabled: true})
-				f.occ = oc[occ.Item{occ.Tw2s, 3}]
+				f.occ = occ.New(occ.Config{true, true, true, true, true, true, true, true})["臺灣正體到簡體"]
 			},
 			args: args{
 				input: map[string]string{
@@ -78,8 +74,7 @@ func TestNew(t *testing.T) {
 		{
 			name: "s2hk",
 			prepare: func(f *fields) {
-				oc := occ.New(occ.Config{S2hk_Enabled: true})
-				f.occ = oc[occ.Item{occ.S2hk, 4}]
+				f.occ = occ.New(occ.Config{true, true, true, true, true, true, true, true})["簡體到香港繁體"]
 			},
 			args: args{
 				input: map[string]string{
@@ -93,8 +88,7 @@ func TestNew(t *testing.T) {
 		{
 			name: "hk2s",
 			prepare: func(f *fields) {
-				oc := occ.New(occ.Config{Hk2s_Enabled: true})
-				f.occ = oc[occ.Item{occ.Hk2s, 5}]
+				f.occ = occ.New(occ.Config{true, true, true, true, true, true, true, true})["香港繁體到簡體"]
 			},
 			args: args{
 				input: map[string]string{
@@ -107,8 +101,7 @@ func TestNew(t *testing.T) {
 		{
 			name: "s2twp",
 			prepare: func(f *fields) {
-				oc := occ.New(occ.Config{S2twp_Enabled: true})
-				f.occ = oc[occ.Item{occ.S2twp, 6}]
+				f.occ = occ.New(occ.Config{true, true, true, true, true, true, true, true})["簡體到繁體（臺灣正體標準）並轉換爲臺灣常用詞彙"]
 			},
 			args: args{
 				input: map[string]string{
@@ -122,8 +115,7 @@ func TestNew(t *testing.T) {
 		{
 			name: "tw2sp",
 			prepare: func(f *fields) {
-				oc := occ.New(occ.Config{Tw2sp_Enabled: true})
-				f.occ = oc[occ.Item{occ.Tw2sp, 7}]
+				f.occ = occ.New(occ.Config{true, true, true, true, true, true, true, true})["繁體（臺灣正體標準）到簡體並轉換爲中國大陸常用詞彙"]
 			},
 			args: args{
 				input: map[string]string{
