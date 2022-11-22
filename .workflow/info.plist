@@ -6,6 +6,19 @@
 	<string>com.kaichu.opencc</string>
 	<key>connections</key>
 	<dict>
+		<key>06D3F58D-0EE2-40EB-91A2-407F7591C7ED</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9E7FB108-C14D-4541-A21E-2D9BCF250448</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>1197F80A-BFB9-4E2A-B8EE-438451DC2C1B</key>
 		<array>
 			<dict>
@@ -23,7 +36,56 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
+				<string>9E7FB108-C14D-4541-A21E-2D9BCF250448</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>72BD0284-2B05-42B8-9792-C9371D3E0672</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D7A58D8A-D8FE-4DF6-9272-68BCE91544EC</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>7CDE7502-882C-4E36-A9FB-D98743E2B6C5</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>8EF76515-9128-400C-8B1E-CF0971CDDA80</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
 				<string>AEF7D8FF-5CCF-46AE-BB82-5C355990520C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>9E7FB108-C14D-4541-A21E-2D9BCF250448</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E79BC629-ACA5-41B0-8272-BC44299FBD80</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -36,17 +98,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>7CDE7502-882C-4E36-A9FB-D98743E2B6C5</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>37C5C562-65F8-4441-86DA-26E65F9F7714</string>
+				<string>D081B0B6-D520-4A51-ACF7-DEEED55D21A0</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -69,6 +121,42 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{var:message}</string>
+				<key>title</key>
+				<string>{var:title}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>D7A58D8A-D8FE-4DF6-9272-68BCE91544EC</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
+				<key>triggerid</key>
+				<string>notifier</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>72BD0284-2B05-42B8-9792-C9371D3E0672</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>autopaste</key>
 				<false/>
 				<key>clipboardtext</key>
@@ -88,21 +176,50 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
+				<key>action</key>
 				<integer>0</integer>
-				<key>keyword</key>
-				<string>occ</string>
-				<key>subtext</key>
-				<string>簡體到繁體、繁體到簡體、簡體到臺灣正體、臺灣正體到簡體、簡體到香港繁體、香港繁體到簡體、簡體到繁體（臺灣正體標準）並轉換爲臺灣常用詞彙、繁體（臺灣正體標準）到簡體並轉換爲中國大陸常用詞彙</string>
-				<key>text</key>
-				<string>簡繁轉換 👉️ '{query}'</string>
-				<key>withspace</key>
-				<true/>
+				<key>argument</key>
+				<integer>1</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>hotstring</key>
+				<string></string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
+			<string>alfred.workflow.trigger.hotkey</string>
 			<key>uid</key>
-			<string>1197F80A-BFB9-4E2A-B8EE-438451DC2C1B</string>
+			<string>8EF76515-9128-400C-8B1E-CF0971CDDA80</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>notifier</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>D081B0B6-D520-4A51-ACF7-DEEED55D21A0</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -156,21 +273,21 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>occ</string>
+				<key>subtext</key>
+				<string>簡體到繁體、繁體到簡體、簡體到臺灣正體、臺灣正體到簡體、簡體到香港繁體、香港繁體到簡體、簡體到繁體（臺灣正體標準）並轉換爲臺灣常用詞彙、繁體（臺灣正體標準）到簡體並轉換爲中國大陸常用詞彙</string>
 				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Open Chinese Convert 開放中文轉換</string>
+				<string>簡繁轉換 👉️ '{query}'</string>
+				<key>withspace</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
+			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>37C5C562-65F8-4441-86DA-26E65F9F7714</string>
+			<string>1197F80A-BFB9-4E2A-B8EE-438451DC2C1B</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -205,89 +322,398 @@
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>qocc</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>{var:QUICK_OCC}轉換 👉️ '{query}'</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>06D3F58D-0EE2-40EB-91A2-407F7591C7ED</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>./exe qocc "$1"</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>9E7FB108-C14D-4541-A21E-2D9BCF250448</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>notifier</string>
+				<key>passinputasargument</key>
+				<true/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>E79BC629-ACA5-41B0-8272-BC44299FBD80</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
 	</array>
 	<key>readme</key>
-	<string>Open Chinese Convert 開放中文轉換
+	<string># Open Chinese Convert
 
-## Usage
+Open Chinese Convert 開放中文轉換
 
-ENABLED_S2T - 簡體到繁體
-ENABLED_T2S - 繁體到簡體
-ENABLED_S2TW - 簡體到臺灣正體
-ENABLED_TW2S - 臺灣正體到簡體
-ENABLED_S2HK - 簡體到香港繁體
-ENABLED_HK2S - 香港繁體到簡體
-ENABLED_S2TWP - 簡體到繁體（臺灣正體標準）並轉換爲臺灣常用詞彙
-ENABLED_TW2SP - 繁體（臺灣正體標準）到簡體並轉換爲中國大陸常用詞彙
+![](./opencc.jpg)
+
+## Features
+
+A total of 8 conversion modes are supported, which can be enabled or disabled by your own settings.
+
+- 簡體到繁體
+- 繁體到簡體
+- 簡體到臺灣正體
+- 臺灣正體到簡體
+- 簡體到香港繁體
+- 香港繁體到簡體
+- 簡體到繁體（臺灣正體標準）並轉換爲臺灣常用詞彙
+- 繁體（臺灣正體標準）到簡體並轉換爲中國大陸常用詞彙
 
 
-for more information, please go to:
-https://github.com/cage1016/alfred-opencc
+## Requires
+- Preferably Alfred 5
+
+## Configuration
+- Enable / Disalbe conversion mode individual
+- Choose quick conversion mode
 
 ## Change Log
-0.2.1
-- fix multiline text</string>
+
+### v1.0.0
+- Migrate to Alfred5
+
+### v0.2.1
+- fix multiline text support
+
+### v0.2.0
+- change opencc golang library
+- update opencc to 1.1.4
+
+https://github.com/cage1016/alfred-opencc</string>
 	<key>uidata</key>
 	<dict>
+		<key>06D3F58D-0EE2-40EB-91A2-407F7591C7ED</key>
+		<dict>
+			<key>xpos</key>
+			<real>130</real>
+			<key>ypos</key>
+			<real>600</real>
+		</dict>
 		<key>1197F80A-BFB9-4E2A-B8EE-438451DC2C1B</key>
 		<dict>
 			<key>xpos</key>
-			<real>265</real>
+			<real>130</real>
 			<key>ypos</key>
-			<real>150</real>
-		</dict>
-		<key>37C5C562-65F8-4441-86DA-26E65F9F7714</key>
-		<dict>
-			<key>xpos</key>
-			<real>720</real>
-			<key>ypos</key>
-			<real>290</real>
+			<real>345</real>
 		</dict>
 		<key>59A19DF4-BCEC-4C30-BDB9-5D91A0494D42</key>
 		<dict>
 			<key>xpos</key>
-			<real>265</real>
+			<real>130</real>
 			<key>ypos</key>
-			<real>360</real>
+			<real>490</real>
+		</dict>
+		<key>72BD0284-2B05-42B8-9792-C9371D3E0672</key>
+		<dict>
+			<key>xpos</key>
+			<real>130</real>
+			<key>ypos</key>
+			<real>50</real>
 		</dict>
 		<key>7CDE7502-882C-4E36-A9FB-D98743E2B6C5</key>
 		<dict>
 			<key>xpos</key>
-			<real>720</real>
+			<real>420</real>
 			<key>ypos</key>
-			<real>150</real>
+			<real>160</real>
+		</dict>
+		<key>8EF76515-9128-400C-8B1E-CF0971CDDA80</key>
+		<dict>
+			<key>xpos</key>
+			<real>130</real>
+			<key>ypos</key>
+			<real>235</real>
+		</dict>
+		<key>9E7FB108-C14D-4541-A21E-2D9BCF250448</key>
+		<dict>
+			<key>xpos</key>
+			<real>340</real>
+			<key>ypos</key>
+			<real>600</real>
 		</dict>
 		<key>AEF7D8FF-5CCF-46AE-BB82-5C355990520C</key>
 		<dict>
 			<key>xpos</key>
-			<real>475</real>
+			<real>340</real>
 			<key>ypos</key>
-			<real>150</real>
+			<real>345</real>
+		</dict>
+		<key>D081B0B6-D520-4A51-ACF7-DEEED55D21A0</key>
+		<dict>
+			<key>xpos</key>
+			<real>515</real>
+			<key>ypos</key>
+			<real>345</real>
+		</dict>
+		<key>D7A58D8A-D8FE-4DF6-9272-68BCE91544EC</key>
+		<dict>
+			<key>xpos</key>
+			<real>420</real>
+			<key>ypos</key>
+			<real>50</real>
+		</dict>
+		<key>E79BC629-ACA5-41B0-8272-BC44299FBD80</key>
+		<dict>
+			<key>xpos</key>
+			<real>515</real>
+			<key>ypos</key>
+			<real>600</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
-	<array/>
-	<key>variables</key>
-	<dict>
-		<key>ENABLED_HK2S</key>
-		<string>1</string>
-		<key>ENABLED_S2HK</key>
-		<string>1</string>
-		<key>ENABLED_S2T</key>
-		<string>1</string>
-		<key>ENABLED_S2TW</key>
-		<string>1</string>
-		<key>ENABLED_S2TWP</key>
-		<string>1</string>
-		<key>ENABLED_T2S</key>
-		<string>1</string>
-		<key>ENABLED_TW2S</key>
-		<string>1</string>
-		<key>ENABLED_TW2SP</key>
-		<string>1</string>
-	</dict>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<true/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>簡體到繁體</string>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Enabled</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>ENABLED_S2T</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<true/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>繁體到簡體</string>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string></string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>ENABLED_T2S</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<true/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>簡體到臺灣正體</string>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string></string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>ENABLED_S2TW</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<true/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>臺灣正體到簡體</string>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string></string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>ENABLED_TW2S</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<true/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>簡體到香港繁體</string>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string></string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>ENABLED_S2HK</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<true/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>香港繁體到簡體</string>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string></string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>ENABLED_HK2S</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<true/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>簡體到繁體（臺灣正體標準）並轉換爲臺灣常用詞彙</string>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string></string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>ENABLED_S2TWP</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<true/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>繁體（臺灣正體標準）到簡體並轉換爲中國大陸常用詞彙</string>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string></string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>ENABLED_TW2SP</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>簡體到繁體</string>
+				<key>pairs</key>
+				<array>
+					<array>
+						<string>簡體到繁體</string>
+						<string>簡體到繁體</string>
+					</array>
+					<array>
+						<string>繁體到簡體</string>
+						<string>繁體到簡體</string>
+					</array>
+					<array>
+						<string>簡體到臺灣正體</string>
+						<string>簡體到臺灣正體</string>
+					</array>
+					<array>
+						<string>臺灣正體到簡體</string>
+						<string>臺灣正體到簡體</string>
+					</array>
+					<array>
+						<string>簡體到香港繁體</string>
+						<string>簡體到香港繁體</string>
+					</array>
+					<array>
+						<string>香港繁體到簡體</string>
+						<string>香港繁體到簡體</string>
+					</array>
+					<array>
+						<string>簡體到繁體（臺灣正體標準）並轉換爲臺灣常用詞彙</string>
+						<string>簡體到繁體（臺灣正體標準）並轉換爲臺灣常用詞彙</string>
+					</array>
+					<array>
+						<string>繁體（臺灣正體標準）到簡體並轉換爲中國大陸常用詞彙</string>
+						<string>繁體（臺灣正體標準）到簡體並轉換爲中國大陸常用詞彙</string>
+					</array>
+				</array>
+			</dict>
+			<key>description</key>
+			<string>Quick translate and copy directly</string>
+			<key>label</key>
+			<string>Quick OCC</string>
+			<key>type</key>
+			<string>popupbutton</string>
+			<key>variable</key>
+			<string>QUICK_OCC</string>
+		</dict>
+	</array>
 	<key>version</key>
-	<string>0.2.1</string>
+	<string>1.0.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/cage1016/alfred-opencc</string>
 </dict>
