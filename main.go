@@ -65,13 +65,15 @@ func run() {
 	}
 
 	if wf.UpdateAvailable() {
-		wf.Configure(aw.SuppressUIDs(true))
-		log.Println("Update available!")
-		wf.NewItem("An update is available!").
-			Subtitle("⇥ or ↩ to install update").
-			Valid(false).
-			Autocomplete("workflow:update").
-			Icon(&aw.Icon{Value: "update-available.png"})
+		if alfred.GetCHECK_UPDATE(wf) {
+			wf.Configure(aw.SuppressUIDs(true))
+			log.Println("Update available!")
+			wf.NewItem("An update is available!").
+				Subtitle("⇥ or ↩ to install update").
+				Valid(false).
+				Autocomplete("workflow:update").
+				Icon(&aw.Icon{Value: "update-available.png"})
+		}
 	}
 
 	h, found := handlers[args[0]]

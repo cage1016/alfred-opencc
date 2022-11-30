@@ -4,6 +4,10 @@
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
 ![GitHub all releases](https://img.shields.io/github/downloads/cage1016/alfred-opencc/total)
 
+## Mention
+
+- The prerequisite for alfred-opencc v1.x.x is alfred5. Please use v0.x.x for alfred4 and mark configuration `CHECK_UPDATE` as `0` to avoid update for check.
+
 ## Introduction
 
 由於 MacOS 在 12.3 終於移除對 Python2 的支援，導至 Alfred 4 版本中原先使用的 [amowu/alfred-chinese-converter](https://github.com/amowu/alfred-chinese-converter) 已經無法再使，作者也沒有更新。所以透過 Golang 自己造一個也省去了對 Python 的依賴。
@@ -16,6 +20,7 @@
 
 | ENV | Enabled  |   |
 |----------------|---|---|
+| CHECK_FOR_UPDATE   | 1  | 檢查更新 |
 | ENABLED_S2T    | 1  | 簡體到繁體 |
 | ENABLED_T2S    | 1  | 繁體到簡體 |
 | ENABLED_S2TW   | 1  | 簡體到臺灣正體 |

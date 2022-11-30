@@ -211,6 +211,7 @@
 
 ## Usage
 
+CHECK_FOR_UPDATE - 檢查更新
 ENABLED_S2T - 簡體到繁體
 ENABLED_T2S - 繁體到簡體
 ENABLED_S2TW - 簡體到臺灣正體
@@ -225,6 +226,9 @@ for more information, please go to:
 https://github.com/cage1016/alfred-opencc
 
 ## Change Log
+0.3.0
+- configuration add enable/disable check for update
+
 0.2.1
 - fix multiline text</string>
 	<key>uidata</key>
@@ -269,6 +273,8 @@ https://github.com/cage1016/alfred-opencc
 	<array/>
 	<key>variables</key>
 	<dict>
+		<key>CHECK_FOR_UPDATE</key>
+		<string>1</string>
 		<key>ENABLED_HK2S</key>
 		<string>1</string>
 		<key>ENABLED_S2HK</key>
@@ -287,7 +293,7 @@ https://github.com/cage1016/alfred-opencc
 		<string>1</string>
 	</dict>
 	<key>version</key>
-	<string>0.2.1</string>
+	<string>0.3.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/cage1016/alfred-opencc</string>
 </dict>
