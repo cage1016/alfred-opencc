@@ -21,11 +21,20 @@ jobs:
       - name: Run unit tests
         run: go test -v ./...
       - name: Parse Event
-        id: event
         run: |
-          echo "::set-output name=tag::$(jq -r '.release.tag_name' "${GITHUB_EVENT_PATH}" | sed s/^v//)"
+          echo "tag=$(jq -r '.release.tag_name' "${GITHUB_EVENT_PATH}" | sed s/^v//)" >> $GITHUB_ENV
+      - name: Import Code-Signing Certificates
+        uses: Apple-Actions/import-codesign-certs@v1
+        with:
+          # The certificates in a PKCS12 file encoded as a base64 string
+          p12-file-base64: "${{ secrets.APPLE_DEVELOPER_CERTIFICATE_P12_BASE64 }}"
+          # The password used to import the PKCS12 file.
+          p12-password: "${{ secrets.APPLE_DEVELOPER_CERTIFICATE_PASSWORD }}"
+      - name: Install gon via HomeBrew for code signing and app notarization
+        run: |
+          brew tap mitchellh/gon
+          brew install mitchellh/gon/gon
       - name: Build and pack
-        id: build
         run: |
           # build package
           GOOS=darwin GOARCH=amd64 go build -ldflags "-s -w" -o exe_amd64
@@ -33,14 +42,46 @@ jobs:
           lipo -create -output .workflow/exe exe_amd64 exe_arm64
           rm  exe_amd64
           rm  exe_arm64
+      - name: code sign and notarize
+        env:
+          AC_USERNAME: "${{ secrets.AC_USERNAME }}"
+          AC_PASSWORD: "${{ secrets.AC_PASSWORD }}"
+        run: |
+          # gon code sign
+          cat <<EOF >> gon.json
+          {
+              "source" : [".workflow/exe"],
+              "bundle_id" : "com.kaichu.opencc",
+              "sign" :{
+                  "application_identity" : "Developer ID Application: KAI CHU CHUNG"
+              }
+          }
+          EOF
+          gon -log-level=debug -log-json ./gon.json
 
-          # pack
+          # pack alfredworkflow
           cd .workflow
-          zip -r ../"OpenChineseConvert-${{ steps.event.outputs.tag }}.alfredworkflow" .
+          plutil -replace version -string "${{ env.tag }}" info.plist
+          zip -r ../"OpenChineseConvert-${{ env.tag }}.alfredworkflow" .
           cd ..
 
-          echo "::set-output name=artifact::$(echo "OpenChineseConvert-${{ steps.event.outputs.tag }}.alfredworkflow")"
+          # zip alfredworkflow as zip archive for notarize
+          zip -r "OpenChineseConvert-${{ env.tag }}.alfredworkflow.zip" "OpenChineseConvert-${{ env.tag }}.alfredworkflow"
+
+          # gon notarize
+          cat <<EOF >> notarize.json
+          {
+              "notarize": [{
+                  "path": "${PWD}/OpenChineseConvert-${{ env.tag }}.alfredworkflow.zip",
+                  "bundle_id": "com.kaichu.opencc",
+                  "staple": false
+              }]
+          }
+          EOF
+          gon -log-level=debug -log-json ./notarize.json
+
+          echo "artifact=$(echo "OpenChineseConvert-${{ env.tag }}.alfredworkflow")" >> $GITHUB_ENV
       - uses: shogo82148/actions-upload-release-asset@v1
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: "${{ steps.build.outputs.artifact }}"
+          asset_path: "${{ env.artifact }}"
