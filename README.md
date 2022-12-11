@@ -3,15 +3,21 @@
 [![Release](https://github.com/cage1016/alfred-opencc/actions/workflows/release.yml/badge.svg)](https://github.com/cage1016/alfred-opencc/actions/workflows/release.yml)
 [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://lbesson.mit-license.org/)
 ![GitHub all releases](https://img.shields.io/github/downloads/cage1016/alfred-opencc/total)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/cage1016/alfred-opencc)
 
 ## Introduction
 
 由於 MacOS 在 12.3 終於移除對 Python2 的支援，導至 Alfred 4 版本中原先使用的 [amowu/alfred-chinese-converter](https://github.com/amowu/alfred-chinese-converter) 已經無法再使，作者也沒有更新。所以透過 Golang 自己造一個也省去了對 Python 的依賴。
 
+## Prerequisite
+
+- Alfred 5 & Powerpack
+
 ## Installation
 
 訪問 [Releases · cage1016/alfred-opencc](https://github.com/cage1016/alfred-opencc/releases) 以獲取最新版本
 
+PS. Please download [Release v0.3.0](https://github.com/cage1016/alfred-opencc/releases/tag/v0.3.0) if you are using Alfred 4 and want to disable auto check for update ([How to disable the auto update check · Issue #4](https://github.com/cage1016/alfred-opencc/issues/4))
 ## Usage
 
 使用關鍵字 `occ` 輸入需要作簡繁轉換的詞句
@@ -42,7 +48,9 @@ If you find any bug or want to propose a new feature, please open an issue to di
 - [cage1016/opencc: Pure Go version OpenCC 繁簡轉換](https://github.com/cage1016/opencc) Apache License
 
 ## Change Log
-
+### v1.1.0
+- Code Sign and Notarize support
+- 
 ### v1.0.0
 - Migrate to Alfred5
 - Add `qocc` command to convert directly and copy to clipboard

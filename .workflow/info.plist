@@ -407,14 +407,17 @@ A total of 8 conversion modes are supported, which can be enabled or disabled by
 - 繁體（臺灣正體標準）到簡體並轉換爲中國大陸常用詞彙
 
 
-## Requires
-- Preferably Alfred 5
+## Prerequisite
+- Alfred 5 &amp; Powerpack
 
 ## Configuration
 - Enable / Disalbe conversion mode individual
 - Choose quick conversion mode
 
 ## Change Log
+
+### v1.1.0
+- Code Sign and Notarize support
 
 ### v1.0.0
 - Migrate to Alfred5
@@ -713,7 +716,7 @@ https://github.com/cage1016/alfred-opencc</string>
 		</dict>
 	</array>
 	<key>version</key>
-	<string>1.0.0</string>
+	<string>1.1.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/cage1016/alfred-opencc</string>
 </dict>
